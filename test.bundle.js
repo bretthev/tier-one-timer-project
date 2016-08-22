@@ -83,8 +83,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/Brett/Desktop/turing/projects/tier-one-timer/node_modules/css-loader/index.js!/Users/Brett/Desktop/turing/projects/tier-one-timer/node_modules/mocha/mocha.css", function() {
-			var newContent = require("!!/Users/Brett/Desktop/turing/projects/tier-one-timer/node_modules/css-loader/index.js!/Users/Brett/Desktop/turing/projects/tier-one-timer/node_modules/mocha/mocha.css");
+		module.hot.accept("!!/Users/Paul_Nguyen/Projects/tier-one-timer-project/node_modules/css-loader/index.js!/Users/Paul_Nguyen/Projects/tier-one-timer-project/node_modules/mocha/mocha.css", function() {
+			var newContent = require("!!/Users/Paul_Nguyen/Projects/tier-one-timer-project/node_modules/css-loader/index.js!/Users/Paul_Nguyen/Projects/tier-one-timer-project/node_modules/mocha/mocha.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -103,13 +103,13 @@
 /* 4 */
 /***/ function(module, exports) {
 
-	module.exports = function () {
+	module.exports = function() {
 		var list = [];
 		list.toString = function toString() {
 			var result = [];
-			for (var i = 0; i < this.length; i++) {
+			for(var i = 0; i < this.length; i++) {
 				var item = this[i];
-				if (item[2]) {
+				if(item[2]) {
 					result.push("@media " + item[2] + "{" + item[1] + "}");
 				} else {
 					result.push(item[1]);
@@ -118,7 +118,7 @@
 			return result.join("");
 		};
 		return list;
-	};
+	}
 
 /***/ },
 /* 5 */
@@ -384,16 +384,16 @@
 	    } catch (e) {
 	        cachedSetTimeout = function () {
 	            throw new Error('setTimeout is not defined');
-	        };
+	        }
 	    }
 	    try {
 	        cachedClearTimeout = clearTimeout;
 	    } catch (e) {
 	        cachedClearTimeout = function () {
 	            throw new Error('clearTimeout is not defined');
-	        };
+	        }
 	    }
-	})();
+	} ())
 	function runTimeout(fun) {
 	    if (cachedSetTimeout === setTimeout) {
 	        //normal enviroments in sane situations
@@ -402,15 +402,17 @@
 	    try {
 	        // when when somebody has screwed with setTimeout but no I.E. maddness
 	        return cachedSetTimeout(fun, 0);
-	    } catch (e) {
+	    } catch(e){
 	        try {
 	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
 	            return cachedSetTimeout.call(null, fun, 0);
-	        } catch (e) {
+	        } catch(e){
 	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
 	            return cachedSetTimeout.call(this, fun, 0);
 	        }
 	    }
+
+
 	}
 	function runClearTimeout(marker) {
 	    if (cachedClearTimeout === clearTimeout) {
@@ -420,16 +422,19 @@
 	    try {
 	        // when when somebody has screwed with setTimeout but no I.E. maddness
 	        return cachedClearTimeout(marker);
-	    } catch (e) {
+	    } catch (e){
 	        try {
 	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
 	            return cachedClearTimeout.call(null, marker);
-	        } catch (e) {
+	        } catch (e){
 	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
 	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
 	            return cachedClearTimeout.call(this, marker);
 	        }
 	    }
+
+
+
 	}
 	var queue = [];
 	var draining = false;
@@ -459,7 +464,7 @@
 	    draining = true;
 
 	    var len = queue.length;
-	    while (len) {
+	    while(len) {
 	        currentQueue = queue;
 	        queue = [];
 	        while (++queueIndex < len) {
@@ -517,15 +522,12 @@
 	    throw new Error('process.binding is not supported');
 	};
 
-	process.cwd = function () {
-	    return '/';
-	};
+	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
 	};
-	process.umask = function () {
-	    return 0;
-	};
+	process.umask = function() { return 0; };
+
 
 /***/ }
 /******/ ]);
