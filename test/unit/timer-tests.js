@@ -60,8 +60,15 @@ describe('Timer functions', function() {
     var timer = new Timer({});
     timer.generateStartedWorkTime();
     timer.calculateEndOfWorkTime();
-    assert.equal(timer.endWorkTime, timer.startedWorkTime + timer.workTimerLength);
-  });
+    assert.equal(timer.endWorkTime, timer.startedWorkTime + timer.workTimerLength)
+  })
+  it('should be able to change seconds into minutes and seconds', function () {
+    var timer = new Timer({});
+    var conversion = timer.changeSecondsToMinutesAndSeconds(115);
+    assert.equal(conversion, '1 minute(s) and 55 seconds left.');
+  })
+
+
 
   // it('should have a function to calculate end work time', function() {
   //   debugger;
@@ -70,6 +77,7 @@ describe('Timer functions', function() {
   //   var endWorkTime = this.startedWorkTime + this.workTimerLength
   //   assert.equal(this.endWorkTime, endWorkTime)
   // })
+
 
 
 });
