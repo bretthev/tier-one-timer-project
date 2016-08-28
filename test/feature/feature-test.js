@@ -8,7 +8,6 @@ describe('welcome page', function() {
   });
 });
 
-
 describe('Pomodoro functionality on the DOM', function() {
   it('should have a time input and append time to the page', function() {
     browser.url('/');
@@ -33,7 +32,7 @@ describe('Pomodoro functionality on the DOM', function() {
     browser.buttonUp('.start-timer');
     timerLenghtInput.setValue('');
 
-    assert.equal(timerLenghtInput.getValue(), '')
+    assert.equal(timerLenghtInput.getValue(), '');
   });
 
   xit('should have a area for displaying the timer', function() {
@@ -51,7 +50,7 @@ describe('Pomodoro functionality on the DOM', function() {
   });
 
   it('should toggle the pause button to unpause if the timer is running', function() {
-    
+
   });
 
 });

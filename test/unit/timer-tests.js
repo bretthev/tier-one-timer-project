@@ -8,7 +8,7 @@ describe('Timer', function() {
   });
   it('should have default timerLength and nextTimerLength', function() {
     var timer = new Timer({});
-    assert.equal(timer.timerLength, 1500000, timer.nextTimerLength, 2)
+    assert.equal(timer.timerLength, 1500000, timer.nextTimerLength, 2);
   });
 });
 
@@ -52,30 +52,33 @@ describe('Timer functions', function() {
   it('should be able to generate a startTime property', function() {
     var timer = new Timer({});
     timer.generateStartedTime();
-    assert.isDefined(timer.startedTime)
+    assert.isDefined(timer.startedTime);
   });
 
   it('should be able to calculate end time', function() {
     var timer = new Timer({});
     timer.generateStartedTime();
     timer.calculateEndTime();
-    assert.equal(timer.endTime, timer.startedTime + timer.timerLength)
-  })
+    assert.equal(timer.endTime, timer.startedTime + timer.timerLength);
+  });
+
   it('should be able to change seconds into minutes and seconds', function () {
     var timer = new Timer({});
     var conversion = timer.changeSecondsToTime(115);
     assert.equal(conversion, '1:55');
-  })
+  });
+
   it('should be able to check to see if time has expired', function() {
     var timer = new Timer({endTime: 20, nextTimerLength: 50})
     timer.checkForTimerEnd();
-    assert.equal(timer.timerLength, 50)
-  })
+    assert.equal(timer.timerLength, 50);
+  });
+
   it('should be able to send itself to localStorage', function() {
-    debugger;
     var timer = new Timer({});
     timer.sendTimerToLocalStorage();
     var retrievedTimer = JSON.parse(localStorage.getItem('timer'));
-    assert.equal(retrievedTimer.timerLength, timer.timerLength)
-  })
+    assert.equal(retrievedTimer.timerLength, timer.timerLength);
+  });
+  
 });
