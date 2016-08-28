@@ -64,20 +64,7 @@ describe('Timer functions', function() {
   })
   it('should be able to change seconds into minutes and seconds', function () {
     var timer = new Timer({});
-    var conversion = timer.changeSecondsToMinutesAndSeconds(115);
+    var conversion = timer.changeSecondsToEnglish(115);
     assert.equal(conversion, '1 minute(s) and 55 seconds left.');
   })
-
-
-
-  // it('should have a function to calculate end work time', function() {
-  //   debugger;
-  //   var timer = new Timer({});
-  //   timer.calculateEndWorkTime();
-  //   var endWorkTime = this.startedWorkTime + this.workTimerLength
-  //   assert.equal(this.endWorkTime, endWorkTime)
-  // })
-
-
-
 });
