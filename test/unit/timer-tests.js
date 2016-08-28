@@ -6,9 +6,9 @@ describe('Timer', function() {
   it('Timer should be a function', function() {
     assert.isFunction(Timer);
   });
-  it('should have default workTimerLength and breakTimerLength', function() {
+  it('should have default timerLength and nextTimerLength', function() {
     var timer = new Timer({});
-    assert.equal(timer.workTimerLength, 1500000, timer.breakTimerLength, 3000000)
+    assert.equal(timer.timerLength, 1500000, timer.nextTimerLength, 2)
   });
 });
 
@@ -49,22 +49,33 @@ describe('Timer functions', function() {
     assert.equal(hours, 2);
   });
 
-  it('should be able to generate a startWorkTime property', function() {
+  it('should be able to generate a startTime property', function() {
     var timer = new Timer({});
-    timer.generateStartedWorkTime();
-    assert.isDefined(timer.startedWorkTime)
+    timer.generateStartedTime();
+    assert.isDefined(timer.startedTime)
   });
 
-  it('should be able to calculate end work time', function() {
-    debugger;
+  it('should be able to calculate end time', function() {
     var timer = new Timer({});
-    timer.generateStartedWorkTime();
-    timer.calculateEndOfWorkTime();
-    assert.equal(timer.endWorkTime, timer.startedWorkTime + timer.workTimerLength)
+    timer.generateStartedTime();
+    timer.calculateEndTime();
+    assert.equal(timer.endTime, timer.startedTime + timer.timerLength)
   })
   it('should be able to change seconds into minutes and seconds', function () {
     var timer = new Timer({});
-    var conversion = timer.changeSecondsToEnglish(115);
-    assert.equal(conversion, '1 minute(s) and 55 seconds left.');
+    var conversion = timer.changeSecondsToTime(115);
+    assert.equal(conversion, '1:55');
+  })
+  it('should be able to check to see if time has expired', function() {
+    var timer = new Timer({endTime: 20, nextTimerLength: 50})
+    timer.checkForTimerEnd();
+    assert.equal(timer.timerLength, 50)
+  })
+  it('should be able to send itself to localStorage', function() {
+    debugger;
+    var timer = new Timer({});
+    timer.sendTimerToLocalStorage();
+    var retrievedTimer = JSON.parse(localStorage.getItem('timer'));
+    assert.equal(retrievedTimer.timerLength, timer.timerLength)
   })
 });
