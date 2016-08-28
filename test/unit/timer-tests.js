@@ -67,6 +67,4 @@ describe('Timer functions', function() {
     var conversion = timer.changeSecondsToEnglish(115);
     assert.equal(conversion, '1 minute(s) and 55 seconds left.');
   })
-
-
 });
