@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: 'Roboto Slab', serif;
 }
 
 h1 {
@@ -60,8 +61,8 @@ input {
   transition-duration: 1s;
 }
 
-button {
-/*   border: none; */
+/* button {
+border: none;
   font-weight: bold;
   height: 50px;
   width: 120px;
@@ -72,7 +73,7 @@ button {
 
 .change-work-time-button, .change-break-time-button {
   width: 150px;
-}
+} */
 
 .countdown-timer {
   display: flex;
@@ -95,4 +96,66 @@ button {
 .warning {
   background: red;
   color: white;
+}
+
+
+
+.pop-out-button{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 2em;
+  margin: 0.5em;
+  position: relative;
+  color: #147AD6;
+  transform-style: preserve-3d;
+  perspective: 400;
+  z-index: 1;
+  border: none;
+  background-color: gray;
+}
+.pop-out-button:before, .pop-out-button:after{
+  position:absolute;
+  content: attr(data-letter);
+  transform-origin: top left;
+  top:0;
+  left:0;
+}
+.pop-out-button, .pop-out-button:before, .pop-out-button:after{
+  transition: all 0.3s ease-in-out;
+}
+.pop-out-button:before{
+  color: #fff;
+  text-shadow:
+    -1px 0px 1px rgba(255,255,255,.8),
+    1px 0px 1px rgba(0,0,0,.8);
+  z-index: 3;
+  transform:
+    rotateX(0deg)
+    rotateY(-15deg)
+    rotateZ(0deg);
+}
+.pop-out-button:after{
+  color: rgba(0,0,0,.11);
+  z-index:2;
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(0deg)
+    rotateZ(0deg)
+    skew(0deg,1deg);
+}
+.pop-out-button:hover:before{
+  color: #fafafa;
+  transform:
+    rotateX(0deg)
+    rotateY(-40deg)
+    rotateZ(0deg);
+}
+.pop-out-button:hover:after{
+  transform:
+    scale(1.08,1)
+    rotateX(0deg)
+    rotateY(40deg)
+    rotateZ(0deg)
+    skew(0deg,22deg);
 }
