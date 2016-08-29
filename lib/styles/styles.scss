@@ -27,7 +27,11 @@ section {
   z-index: 2;
   position: absolute;
   margin: auto;
-  top: 250px
+  top: 230px;
+}
+
+.work-timer-length {
+  border-radius: 20px;
 }
 
 input {
@@ -57,11 +61,17 @@ input {
 }
 
 button {
-  border: none;
+/*   border: none; */
   font-weight: bold;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 120px;
   font-size: 1.5em;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.change-work-time-button, .change-break-time-button {
+  width: 150px;
 }
 
 .countdown-timer {
