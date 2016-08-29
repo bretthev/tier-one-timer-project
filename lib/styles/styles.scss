@@ -1,3 +1,12 @@
+body {
+  height: 100%;
+  width: 100%;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 h1 {
   font-size: 3em;
   text-align: center;
@@ -7,18 +16,40 @@ section {
   display: flex;
 }
 
+.pomodoro-container {
+  justify-content: center;
+  align-items: center;
+}
+
 .input-container {
   justify-content: space-around;
+  z-index: 2;
+  position: absolute;
+  margin: auto;
+  top: 250px
 }
 
 input {
-  width: 40%;
+  height: 100px;
+  width: 500px;
+  text-align: center;
+  font-size: 2em;
+  z-index: 3;
+  outline: none;
 }
+
 
 .timer-type-display {
   text-align: center;
 }
+
+.blur-background {
+  -webkit-filter: blur(50px);
+}
+
 .timer-container {
+  position: relative;
+  z-index: 1;
   margin-top: 5%;
   justify-content: center;
   transition-duration: 1s;
@@ -34,12 +65,15 @@ button {
 
 .countdown-timer {
   display: flex;
+  font-size: 3em;
   justify-content: center;
   align-items: center;
   height: 300px;
   width: 300px;
   border: 10px solid black;
   border-radius: 50%;
+  background-color: blue;
+  color: white;
 }
 
 .button-container {
