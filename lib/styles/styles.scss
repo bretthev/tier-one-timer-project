@@ -2,10 +2,10 @@
 body {
   height: 100%;
   width: 100%;
-  background: gray;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 30px;
 }
 
 h1 {
@@ -17,9 +17,33 @@ section {
   display: flex;
 }
 
+.timer-type-display {
+  font-size: 2em;
+  color: white;
+}
+
+.content-container {
+  height: 100vh;
+  flex-direction: column;
+  background-color: #e1e8f0;
+  align-items: space-around;
+}
+
+.work-background {
+  background: url(/lib/styles/busy.jpg) no-repeat;
+  background-size: cover;
+}
+
+
+.break-background {
+  background: url(/lib/styles/beach-relax.jpg) no-repeat;
+  background-size: cover;
+  }
+
 .pomodoro-container {
   justify-content: center;
   align-items: center;
+  background-size: cover;
 }
 
 .input-container {
@@ -27,11 +51,7 @@ section {
   z-index: 2;
   position: absolute;
   margin: auto;
-  top: 230px;
-}
-
-.work-timer-length {
-  border-radius: 20px;
+  top: 28%;
 }
 
 input {
@@ -41,11 +61,18 @@ input {
   font-size: 2em;
   z-index: 3;
   outline: none;
+  border-radius: 20px;
 }
 
 
 .timer-type-display {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  border-radius: 50%;
+  margin: auto;
+  height: 10%;
 }
 
 .blur-background {
@@ -81,10 +108,13 @@ button {
   align-items: center;
   height: 300px;
   width: 300px;
-  border: 10px solid black;
   border-radius: 50%;
-  background-color: blue;
+  background-color: rgba(23,62,67,.5);
   color: white;
+}
+
+.work-countdown {
+  background-color: #9068be;
 }
 
 .button-container {
@@ -95,4 +125,9 @@ button {
 .warning {
   background: red;
   color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+    }
 }
