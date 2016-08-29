@@ -15,9 +15,13 @@ input {
   width: 40%;
 }
 
+.timer-type-display {
+  text-align: center;
+}
 .timer-container {
   margin-top: 5%;
   justify-content: center;
+  transition-duration: 1s;
 }
 
 button {

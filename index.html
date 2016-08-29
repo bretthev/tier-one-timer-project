@@ -5,23 +5,23 @@
   <title>Timer Project</title>
 </head>
 <body>
-  <h1>Paul and Brett's Fart Time Extravaganza</h1>
+  <h1>Paul and Brett's Timer Extravaganza</h1>
   <section class="input-container">
   <input type="number" class="work-timer-length" placeholder="Work Timer Length"><input type="number" class="break-timer-length" placeholder="Break Timer Length">
 </section>
   <section class="timer-container">
     <h2 class="countdown-timer"></h2>
   </section>
+  <h3 class="timer-type-display"></h3>
   <section class="button-container">
       <button class="start-timer">Start</button>
-      <button class="pause-timer" disabled>Pause</button>
-      <button class="resume-timer" disabled>Resume</button>
-      <button class="clear-timer" disabled>Clear Timer</button>
+      <button class="pause-timer" hidden>Pause</button>
+      <button class="resume-timer" hidden>Resume</button>
+      <button class="reset-timer" hidden>Reset Timer</button>
       <button class="test-button">Test</button>
   </section>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="../../src/howler.core.js"></script>
   <script src="main.bundle.js"></script>
 </body>
 </html>
