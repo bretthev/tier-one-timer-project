@@ -8,7 +8,9 @@
   <script language="javascript" type="text/javascript" src="lib/p5-library/p5.js"></script>
   <script language="javascript" type="text/javascript" src="lib/scripts/sketch.js"></script>
   <meta name="viewport" content="width=device-width">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">  <title>Timer Project</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">
+<title>Timer Project</title>
 </head>
 <body>
   <section class="content-container">
@@ -22,14 +24,15 @@
   </section>
   <h3 class="timer-type-display"></h3>
   <section class="button-container">
-    <button class="start-timer pop-out-button" data-letter="Start">Start</button>
-    <button class="pause-timer pop-out-button" hidden data-letter="Pause">Pause</button>
-    <button class="resume-timer pop-out-button" hidden data-letter="Resume">Resume</button>
-    <button class="reset-timer pop-out-button" hidden data-letter="Reset">Reset</button>
-    <button class="change-work-time-button pop-out-button" data-letter="Work Timer">Work Timer</button>
-    <button class="change-break-time-button pop-out-button" data-letter="Break Timer">Break Timer</
+    <button class="start-timer pop-out-button" data-word="Start">Start</button>
+    <button hidden class="pause-timer pop-out-button" data-word="Pause">Pause</button>
+    <button hidden class="resume-timer pop-out-button" data-word="Resume">Resume</button>
+    <button hidden class="reset-timer pop-out-button" data-word="Reset">Reset</button>
+    <button class="change-work-time-button pop-out-button" data-word="Work Timer">Work Timer</button>
+    <button class="change-break-time-button pop-out-button" data-word="Break Timer">Break Timer</button>
     </section>
   </section>
+  <button class="clock-icon"></button>
 </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="main.bundle.js"></script>
