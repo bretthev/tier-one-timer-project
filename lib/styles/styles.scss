@@ -5,7 +5,19 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 30px;
+  font-family: 'Cuprum', sans-serif;
+}
+
+.clock-icon {
+  background: url(/lib/styles/clock.png) no-repeat;
+  background-image: cover;
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 57%;
+  left: 20%;
 }
 
 h1 {
@@ -17,10 +29,6 @@ section {
   display: flex;
 }
 
-.timer-type-display {
-  font-size: 2em;
-  color: white;
-}
 
 .content-container {
   height: 100vh;
@@ -64,15 +72,18 @@ input {
   border-radius: 20px;
 }
 
-
 .timer-type-display {
-  display: flex;
+  font-size: 2.3em;
+  color: white;
+  text-shadow: 2px 2px #9068be;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
-  width: 40%;
-  border-radius: 50%;
+  justify-content: center; */
+/*   width: 40%;
+border-radius: 50%;
+ */
   margin: auto;
-  height: 10%;
+  /* height: 10%; */
 }
 
 .blur-background {
@@ -87,8 +98,8 @@ input {
   transition-duration: 1s;
 }
 
-button {
-/*   border: none; */
+/* button {
+border: none;
   font-weight: bold;
   height: 50px;
   width: 120px;
@@ -99,23 +110,24 @@ button {
 
 .change-work-time-button, .change-break-time-button {
   width: 150px;
-}
+} */
 
 .countdown-timer {
   display: flex;
-  font-size: 3em;
+  font-size: 5em;
   justify-content: center;
   align-items: center;
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  background-color: rgba(23,62,67,.5);
+  background-color: rgba(123,62,167,.6);
+  border: 3px solid white;
   color: white;
 }
 
-.work-countdown {
+/* .work-countdown {
   background-color: #9068be;
-}
+} */
 
 .button-container {
   margin-top: 5%;
@@ -127,7 +139,64 @@ button {
   color: white;
 }
 
-@media only screen and (max-width: 500px) {
+.pop-out-button{
+  font-family: 'Cuprum', sans-serif;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 2em;
+  margin-bottom: 2em;
+  position: relative;
+  color: #9068be;
+  transform-style: preserve-3d;
+  z-index: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.pop-out-button:before, .pop-out-button:after{
+  position:absolute;
+  content: attr(data-word);
+  transform-origin: top left;
+  left: 3px;
+}
+
+.pop-out-button, .pop-out-button:before, .pop-out-button:after{
+  transition: all 0.3s ease-in-out;
+}
+
+.pop-out-button:before{
+  color: white;
+  z-index: 3;
+  transform:
+    rotateX(0deg);
+}
+.pop-out-button:after{
+  color: gray;
+  z-index:2;
+  transform:
+  rotateX(0deg)
+  rotateY(0deg)
+  rotateZ(0deg);
+}
+
+.pop-out-button:hover:before{
+  color: #fafafa;
+  transform:
+  rotateY(-40deg)
+/*   rotateX(0deg)
+rotateZ(0deg);
+ */
+}
+
+.pop-out-button:hover:after{
+  transform:
+  rotateY(40deg)
+  skew(0deg,23deg);
+}
+
+/* @media only screen and (max-width: 500px) {
     body {
     }
-}
+
+} */
