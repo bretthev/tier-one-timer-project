@@ -84,6 +84,7 @@ input {
   z-index: 1;
   margin-top: 5%;
   justify-content: center;
+  flex-direction: column;
   transition-duration: 1s;
 }
 
@@ -99,10 +100,6 @@ input {
   border: 3px solid white;
   color: white;
 }
-
-/* .work-countdown {
-  background-color: #9068be;
-} */
 
 .button-container {
   margin-top: 5%;
