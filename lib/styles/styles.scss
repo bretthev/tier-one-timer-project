@@ -54,7 +54,7 @@ section {
 }
 
 .work-countdown {
-  background-color: rgb(123,62,167);
+  background-color: rgba(123,62,167,1);
 }
 
 .break-countdown {
@@ -114,7 +114,7 @@ input {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  background-color: rgba(123,62,167,1);
+  /* background-color: rgba(123,62,167,1); */
   border: 3px solid white;
   color: white;
 }
