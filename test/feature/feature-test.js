@@ -21,9 +21,11 @@ describe('Pomodoro functionality on the DOM', function() {
   });
 
   it('should have a break-time input', function() {
+    browser.click('.change-work-time-button');
     var breaktimerLenghtInput = browser.element('.break-timer-length');
 
     breaktimerLenghtInput.setValue('1');
+    browser.keypress('.')
     assert.equal(breaktimerLenghtInput.getValue(), '1');
   });
 

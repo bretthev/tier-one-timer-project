@@ -15,7 +15,7 @@ module.exports = {
         { test: /\.css$/, loader: "style!css" },
         { test: /\.scss$/, loader: "style!css!sass" },
         { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015' },
-          
+
 
         {
           test: /\.png$/,
