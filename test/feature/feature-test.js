@@ -9,28 +9,75 @@ describe('welcome page', function() {
 });
 
 describe('Pomodoro functionality on the DOM', function() {
-  it('should have a time input and append time to the page', function() {
+  it('should have a work-time input and append time to the page', function() {
     browser.url('/');
 
-    var timerLenghtInput = browser.element('.work-timer-length');
+    // var worktimerLenghtInput = browser.element('.work-timer-length');
 
-    timerLenghtInput.setValue('1');
-    assert.equal(timerLenghtInput.getValue(), '1');
+    worktimerLenghtInput.setValue('1');
+    assert.equal(worktimerLenghtInput.getValue(), '1');
   });
 
-  xit('should start time on the DOM based on the input entered by the user', function() {
-    browser.element('.start-timer');
+  it('should have a break-time input', function() {
+    var breaktimerLenghtInput = browser.element('.break-timer-length');
 
-    var displayingTimerOnPage = browser.element('work-timer');
+    breaktimerLenghtInput.setValue('1');
+    assert.equal(breaktimerLenghtInput.getValue(), '1');
+  });
 
-    assert.equal(displayingTimerOnPage.getValue(), '60');
+  context('Buttons', function() {
+    it('should have a start button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.start-timer'), true);
+    });
+
+    it('should have a pause button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.pause-timer'), true);
+    });
+
+    it('should have a resume button', function() {
+
+      assert.equal(browser.isExisting('.resume-timer'), true);
+    });
+
+    it('should have a reset button', function() {
+
+      assert.equal(browser.isExisting('.reset-timer'), true);
+    });
+
+    it('should have a change work time button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.change-work-time-button'), true);
+    });
+
+    it('should have a change break time button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.change-break-time-button'), true);
+    });
+
+    it('should have a clock icon button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.clock-icon'), true);
+    });
+
+    it('should have a beach ball button', function() {
+      browser.url('/');
+
+      assert.equal(browser.isExisting('.beach-icon'), true);
+    });
   });
 
   it('should clear the input field after the start button is clicked', function() {
     var timerLenghtInput = browser.element('.work-timer-length');
 
     browser.buttonUp('.start-timer');
-    timerLenghtInput.setValue('');
+    // timerLenghtInput.setValue('');
 
     assert.equal(timerLenghtInput.getValue(), '');
   });
@@ -39,18 +86,6 @@ describe('Pomodoro functionality on the DOM', function() {
     var displayingTimerOnPage = browser.element('work-timers');
 
     assert(displayingTimerOnPage.isExisting(), '');
-  });
-
-  it('should disable the pause button when the page first loads up', function() {
-    browser.url('/');
-
-    var pauseButtonStatus = browser.isEnabled('.pause-and-restart-timer');
-
-    assert.equal(pauseButtonStatus, false);
-  });
-
-  it('should toggle the pause button to unpause if the timer is running', function() {
-
   });
 
 });
