@@ -126,9 +126,25 @@ input {
 }
 
 .warning {
-  background-color: red !important;
+  background-color: #ED0000 !important;
   color: white;
 }
+/*
+.warning {
+  -webkit-animation: warning 1s linear infinite;
+}
+
+@-webkit-keyframes "warning" {
+  0% {
+    color: rgba(255, 255, 255, 1);
+  }
+  90% {
+    color: rgba(255,0,0,0.0);
+  }
+  100% {
+    color: rgba(255,255,255,1.0);
+  }
+} */
 
 
 /* BUTTONS */
@@ -200,9 +216,9 @@ input {
     line-height: .6;
   }
 
-  .reset-timer {
+  /* .reset-timer {
     margin-left: 20px;
-  }
+  } */
 
   .change-break-time-button {
     margin-bottom: 30px;
