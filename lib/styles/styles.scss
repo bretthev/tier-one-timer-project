@@ -1,3 +1,6 @@
+$work-background-color: rgba(123,62,167,1);
+$break-background-color: #456575;
+
 body {
   height: 100%;
   width: 100%;
@@ -53,12 +56,16 @@ section {
   background-size: cover;
 }
 
+.break-background, .timer-type-display, .pop-out-button{
+  text-shadow: $break-background-color;
+}
+
 .work-countdown {
-  background-color: rgba(123,62,167,1);
+  background-color: $work-background-color;
 }
 
 .break-countdown {
-  background-color: #456575;
+  background-color: $break-background-color;
 }
 
 .pomodoro-container {
@@ -90,6 +97,7 @@ input {
   margin: -webkit-auto;
   margin: auto;
   background-color: transparent;
+  border-bottom: 2px solid white;
 }
 
 .blur-background {
@@ -119,11 +127,11 @@ input {
 }
 
 .background-color-for-working  {
-  background-color: rgba(123,62,167,1);
+  background-color: $work-background-color;
 }
 
 .background-color-for-break {
-  background-color: #456575;
+  background-color: $break-background-color;
 }
 
 .button-container {
@@ -149,7 +157,6 @@ input {
   }
 }
 
-
 /* BUTTONS */
 .pop-out-button{
   font-family: 'Cuprum', sans-serif;
@@ -158,7 +165,7 @@ input {
   font-size: 2.5em;
   margin-bottom: 2em;
   position: relative;
-  color: #9068be;
+  color: $work-background-color;
   transform-style: preserve-3d;
   z-index: 1;
   border: none;
@@ -225,6 +232,10 @@ input {
 }
 
 @media (max-width: 690px) {
+  .button-container {
+    text-align: center;
+  }
+
   .pop-out-button {
     line-height: .2;
   }
@@ -241,6 +252,10 @@ input {
 @media only screen
 and (min-device-width : 375px)
 and (max-device-width : 667px) {
+  .button-container {
+    text-align: center;
+  }
+
   .work-background {
     background: url(/lib/styles/busy-mobile.jpg) no-repeat;
   }
