@@ -1,3 +1,5 @@
+'use strict';
+
 const assert = require('assert');
 
 describe('welcome page', function() {
@@ -77,9 +79,8 @@ describe('Pomodoro functionality on the DOM', function() {
     var timerLenghtInput = browser.element('.work-timer-length');
 
     browser.buttonUp('.start-timer');
-    // timerLenghtInput.setValue('');
 
-    assert.equal(timerLenghtInput.getValue(), '');
+    assert.equal(('.').getValue(), '');
   });
 
   xit('should have a area for displaying the timer', function() {
