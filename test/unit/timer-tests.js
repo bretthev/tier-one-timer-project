@@ -89,4 +89,10 @@ describe('Timer functions', function() {
     assert.equal(timer.timeRemaining, 1500000)
   })
 
+  it('should be able to check to see if remaining time is near a given time stamp', function() {
+    var timer = new Timer({timeRemaining: 19999})
+    var isNear = timer.isNearTimeStamp(timer.timeRemaining, 20);
+    assert.isTrue(isNear);
+  })
+
 });
