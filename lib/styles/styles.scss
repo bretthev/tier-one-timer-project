@@ -16,11 +16,22 @@ body {
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 57%;
+  top: 4%;
   left: 20%;
 }
 
-
+.beach-icon {
+  background: url(/lib/styles/beach-ball.png) no-repeat;
+  background-image: cover;
+  outline: none;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  bottom: 1%;
+  right: 2%;
+}
 
 section {
   display: flex;
@@ -29,9 +40,7 @@ section {
 .content-container {
   height: 100vh;
   flex-direction: column;
-  /* background-color: #e1e8f0; */
-/*   align-items: space-around;
- */}
+}
 
 .work-background {
   background: url(/lib/styles/busy.jpg) no-repeat;
@@ -41,24 +50,26 @@ section {
 .break-background {
   background: url(/lib/styles/beach-relax.jpg) no-repeat;
   background-size: cover;
-  }
+}
+
+.break-countdown {
+  background-color: #456575;
+}
 
 .pomodoro-container {
   justify-content: center;
   align-items: center;
-  /* background-size: cover; */
 }
 
 .input-container {
-  /* justify-content: space-around; */
   z-index: 2;
   position: absolute;
   margin: auto;
-  top: 28%;
+  top: 33%;
 }
 
 input {
-  height: 100px;
+  height: 90px;
   width: 500px;
   text-align: center;
   font-size: 2em;
@@ -72,11 +83,11 @@ input {
   color: white;
   text-shadow: 2px 2px #9068be;
   margin: auto;
+  background-color: transparent;
 }
 
 .blur-background {
-  -webkit-filter: blur(50px);
-
+  -webkit-filter: blur(30px);
 }
 
 .timer-container {
@@ -101,15 +112,24 @@ input {
   color: white;
 }
 
+.background-color-for-working  {
+  background-color: rgba(123,62,167,1);
+}
+
+.background-color-for-break {
+  background-color: #456575;
+}
+
 .button-container {
-  margin-top: 5%;
+  margin-top: 3%;
   justify-content: space-around;
 }
 
 .warning {
-  background: red;
+  background-color: red !important;
   color: white;
 }
+
 
 /* BUTTONS */
 .pop-out-button{
@@ -165,8 +185,44 @@ input {
   skew(0deg,23deg);
 }
 
-/* @media only screen and (max-width: 500px)
- */
+@media (max-width: 800px) {
+  .button-container {
+    width: 267px;
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  .pop-out-button {
+    font-size: 2.7em;
+    margin-bottom: 5px;
+    margin-top: 25px;
+    line-height: .6;
+  }
+
+  .reset-timer {
+    margin-left: 20px;
+  }
+
+  .change-break-time-button {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 690px) {
+  .pop-out-button {
+    line-height: .2;
+  }
+
+  .timer-type-display {
+    font-size: 2.7em;
+  }
+
+  .pop-out-button {
+    font-size: 2.7em;
+  }
+}
+
 @media only screen
 and (min-device-width : 375px)
 and (max-device-width : 667px) {
@@ -175,16 +231,24 @@ and (max-device-width : 667px) {
   }
 
   .countdown-timer {
-    width: 225px;
-    height: 225px;
+    width: 250px;
+    height: 250px;
+    margin-top: 40%;
   }
 
   .timer-type-display {
+    display: none;
     margin: auto;
-    font-size: 2em;
-    width: 90%;
+    font-size: 1.5em;
+    width: 100%;
     text-align: center;
-    /* margin-bottom: 200px; */
+    z-index: 2;
+    position: absolute;
+    margin-bottom: 200px;
+  }
+
+  .input-container {
+    top: 26%;
   }
 
   input {
@@ -201,16 +265,34 @@ and (max-device-width : 667px) {
     display: flex;
     flex-direction: column;
   }
+
   .pop-out-button {
-    font-size: 3em;
+    font-size: 2.7em;
+    margin-bottom: 20px;
+    margin-top: 40px;
+    line-height: 2;
   }
 
-  .pop-out-button:before, .pop-out-button:after{
-    position:absolute;
-    content: attr(data-word);
-    transform-origin: top left;
-    left: 90px;
+  .change-break-time-button  {
+    margin-bottom: 80px;
   }
 
+  .pop-out-button:before{
+    position: absolute;
+    right: 6px;
+  }
 
+  .pop-out-button:after{
+    position: absolute;
+    right: 1px;
+  }
+
+  .clock-icon {
+    top: 2%;
+    left: 4%;
+  }
+
+  .beach-icon {
+    bottom: 3%;
+  }
 }
