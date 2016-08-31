@@ -80,5 +80,13 @@ describe('Timer functions', function() {
     var retrievedTimer = JSON.parse(localStorage.getItem('timer'));
     assert.equal(retrievedTimer.timerLength, timer.timerLength);
   });
-  
+
+  it('should be able to calculate remaining time', function() {
+    var timer = new Timer({});
+    timer.generateStartedTime();
+    timer.calculateEndTime();
+    var remaining = timer.findRemainingTime();
+    assert.equal(timer.timeRemaining, 1500000)
+  })
+
 });
